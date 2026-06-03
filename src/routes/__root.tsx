@@ -83,6 +83,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Tanush Chokshi" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Orbit AI — The first AI that doesn't wait" },
+      { name: "twitter:title", content: "Orbit AI — The first AI that doesn't wait" },
+      { property: "og:description", content: "Orbit AI is a proactive wearable AI pin. Say it. Show it. Orbit handles it." },
+      { name: "twitter:description", content: "Orbit AI is a proactive wearable AI pin. Say it. Show it. Orbit handles it." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ce81b3cd-c961-4ecc-9d14-d443d11f09db/id-preview-91fcc3cc--1b49e732-23d2-4457-a892-e21922024ab6.lovable.app-1780451369799.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ce81b3cd-c961-4ecc-9d14-d443d11f09db/id-preview-91fcc3cc--1b49e732-23d2-4457-a892-e21922024ab6.lovable.app-1780451369799.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
