@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WaitlistRouteImport } from './routes/waitlist'
+import { Route as UseCasesRouteImport } from './routes/use-cases'
+import { Route as ProblemRouteImport } from './routes/problem'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as ArchitectureRouteImport } from './routes/architecture'
@@ -18,6 +20,16 @@ import { Route as IndexRouteImport } from './routes/index'
 const WaitlistRoute = WaitlistRouteImport.update({
   id: '/waitlist',
   path: '/waitlist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UseCasesRoute = UseCasesRouteImport.update({
+  id: '/use-cases',
+  path: '/use-cases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProblemRoute = ProblemRouteImport.update({
+  id: '/problem',
+  path: '/problem',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
@@ -46,6 +58,8 @@ export interface FileRoutesByFullPath {
   '/architecture': typeof ArchitectureRoute
   '/founder': typeof FounderRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/problem': typeof ProblemRoute
+  '/use-cases': typeof UseCasesRoute
   '/waitlist': typeof WaitlistRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +67,8 @@ export interface FileRoutesByTo {
   '/architecture': typeof ArchitectureRoute
   '/founder': typeof FounderRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/problem': typeof ProblemRoute
+  '/use-cases': typeof UseCasesRoute
   '/waitlist': typeof WaitlistRoute
 }
 export interface FileRoutesById {
@@ -61,19 +77,37 @@ export interface FileRoutesById {
   '/architecture': typeof ArchitectureRoute
   '/founder': typeof FounderRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/problem': typeof ProblemRoute
+  '/use-cases': typeof UseCasesRoute
   '/waitlist': typeof WaitlistRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/architecture' | '/founder' | '/how-it-works' | '/waitlist'
+  fullPaths:
+    | '/'
+    | '/architecture'
+    | '/founder'
+    | '/how-it-works'
+    | '/problem'
+    | '/use-cases'
+    | '/waitlist'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/architecture' | '/founder' | '/how-it-works' | '/waitlist'
+  to:
+    | '/'
+    | '/architecture'
+    | '/founder'
+    | '/how-it-works'
+    | '/problem'
+    | '/use-cases'
+    | '/waitlist'
   id:
     | '__root__'
     | '/'
     | '/architecture'
     | '/founder'
     | '/how-it-works'
+    | '/problem'
+    | '/use-cases'
     | '/waitlist'
   fileRoutesById: FileRoutesById
 }
@@ -82,6 +116,8 @@ export interface RootRouteChildren {
   ArchitectureRoute: typeof ArchitectureRoute
   FounderRoute: typeof FounderRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  ProblemRoute: typeof ProblemRoute
+  UseCasesRoute: typeof UseCasesRoute
   WaitlistRoute: typeof WaitlistRoute
 }
 
@@ -92,6 +128,20 @@ declare module '@tanstack/react-router' {
       path: '/waitlist'
       fullPath: '/waitlist'
       preLoaderRoute: typeof WaitlistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/use-cases': {
+      id: '/use-cases'
+      path: '/use-cases'
+      fullPath: '/use-cases'
+      preLoaderRoute: typeof UseCasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/problem': {
+      id: '/problem'
+      path: '/problem'
+      fullPath: '/problem'
+      preLoaderRoute: typeof ProblemRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-it-works': {
@@ -130,6 +180,8 @@ const rootRouteChildren: RootRouteChildren = {
   ArchitectureRoute: ArchitectureRoute,
   FounderRoute: FounderRoute,
   HowItWorksRoute: HowItWorksRoute,
+  ProblemRoute: ProblemRoute,
+  UseCasesRoute: UseCasesRoute,
   WaitlistRoute: WaitlistRoute,
 }
 export const routeTree = rootRouteImport
