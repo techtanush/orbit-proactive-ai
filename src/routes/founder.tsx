@@ -1,14 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
-import { Linkedin } from "lucide-react";
+import { PageHeader } from "@/components/SiteChrome";
+import { Linkedin, ArrowRight } from "lucide-react";
+import tanushPhoto from "@/assets/tanush.png.asset.json";
 
 export const Route = createFileRoute("/founder")({
   head: () => ({
     meta: [
       { title: "About the founder — Tanush Chokshi" },
-      { name: "description", content: "Tanush Chokshi is a 14-year-old AI builder from the Bay Area." },
+      { name: "description", content: "Tanush Chokshi is a 14-year-old AI builder from the Bay Area. TKS Velocity member. 8 shipped products in under a year." },
       { property: "og:title", content: "About the founder — Tanush Chokshi" },
-      { property: "og:description", content: "TKS Velocity member. 8 shipped products in under a year." },
+      { property: "og:description", content: "14 years old. TKS Velocity. 8 shipped products. Top 10 internationally in debate." },
+      { property: "og:image", content: tanushPhoto.url },
+      { property: "og:url", content: "/founder" },
     ],
   }),
   component: Founder,
@@ -26,36 +30,60 @@ const milestones = [
 function Founder() {
   useReveal();
   return (
-    <section className="relative py-24 md:py-32">
-      <div className="mx-auto max-w-3xl px-6 text-center reveal">
-        <div className="text-xs font-medium text-lime tracking-[0.2em] uppercase">About the founder</div>
+    <section className="relative py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6">
+        <PageHeader eyebrow="About the founder" title={<>Tanush <span className="text-lime text-glow">Chokshi</span></>} />
 
-        <div className="mt-12 mx-auto h-28 w-28 rounded-full bg-gradient-to-br from-lime/30 to-white/5 border border-white/10 grid place-items-center text-4xl font-semibold animate-float">
-          TC
+        <div className="mt-16 grid md:grid-cols-5 gap-10 items-center">
+          {/* Photo */}
+          <div className="md:col-span-2 reveal">
+            <div className="relative mx-auto max-w-xs">
+              <div className="absolute -inset-4 rounded-3xl bg-lime/20 blur-2xl opacity-50 animate-glow-pulse" />
+              <div className="relative aspect-square rounded-3xl overflow-hidden border border-lime/30 shadow-[0_0_60px_-15px_#c6f24a]">
+                <img
+                  src={tanushPhoto.url}
+                  alt="Tanush Chokshi, founder of Orbit AI"
+                  width={600}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
+                {/* Subtle lime overlay for cohesion */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="absolute -bottom-3 -right-3 rounded-full bg-lime px-3 py-1 text-xs font-semibold text-primary-foreground shadow-[0_0_30px_#c6f24a]">
+                Founder
+              </div>
+            </div>
+          </div>
+
+          {/* Bio */}
+          <div className="md:col-span-3 reveal" style={{ transitionDelay: "120ms" }}>
+            <p className="text-lime text-sm tracking-[0.2em] uppercase font-medium">Founder, Orbit AI</p>
+            <p className="mt-6 text-lg md:text-xl text-foreground/90 leading-relaxed">
+              Tanush Chokshi is a 14-year-old AI builder from the Bay Area.
+              TKS Velocity member. 8 shipped products in under a year.
+              Ranked top 10 internationally in debate.
+              Currently building Orbit AI.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="https://www.linkedin.com/in/tanushchokshi/"
+                target="_blank" rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-lime px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_-5px_#c6f24a] hover:shadow-[0_0_50px_-5px_#c6f24a] transition-all"
+              >
+                <Linkedin className="h-4 w-4" />
+                Connect on LinkedIn
+              </a>
+              <Link to="/waitlist" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium hover:bg-white/[0.06] transition">
+                Join the waitlist <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
         </div>
 
-        <h1 className="mt-8 text-4xl md:text-6xl font-semibold tracking-tight">Tanush Chokshi</h1>
-        <p className="mt-3 text-lime text-sm tracking-wide">Founder, Orbit AI</p>
-
-        <p className="mt-10 text-lg md:text-xl text-muted-foreground leading-relaxed">
-          Tanush Chokshi is a 14-year-old AI builder from the Bay Area.
-          TKS Velocity member. 8 shipped products in under a year.
-          Ranked top 10 internationally in debate.
-          Currently building Orbit AI.
-        </p>
-
-        <a
-          href="https://www.linkedin.com/in/tanushchokshi/"
-          target="_blank" rel="noreferrer"
-          className="mt-10 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] px-6 py-3 text-sm font-medium transition"
-        >
-          <Linkedin className="h-4 w-4 text-[#0a66c2]" />
-          Connect on LinkedIn
-        </a>
-      </div>
-
-      <div className="mx-auto max-w-5xl px-6 mt-24 reveal">
-        <div className="card-surface rounded-3xl p-8 md:p-12 grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-10">
+        {/* Milestones */}
+        <div className="mt-24 reveal card-surface rounded-3xl p-8 md:p-12 grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-10">
           {milestones.map((m) => (
             <div key={m.l} className="text-center">
               <div className="text-3xl md:text-4xl font-semibold text-lime text-glow">{m.v}</div>

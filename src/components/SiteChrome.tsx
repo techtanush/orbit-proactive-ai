@@ -4,27 +4,28 @@ import { Linkedin, Github } from "lucide-react";
 
 const nav = [
   { to: "/", label: "Home" },
+  { to: "/problem", label: "Problem" },
   { to: "/how-it-works", label: "How it works" },
+  { to: "/use-cases", label: "Use cases" },
   { to: "/architecture", label: "Architecture" },
   { to: "/founder", label: "Founder" },
-  { to: "/waitlist", label: "Waitlist" },
 ] as const;
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/60 border-b border-white/5">
-      <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-white/5">
+      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between gap-6">
         <Link to="/" className="shrink-0">
           <OrbitLogo />
         </Link>
-        <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
+        <nav className="hidden lg:flex items-center gap-6 text-sm text-muted-foreground">
           {nav.map((n) => (
             <Link
               key={n.to}
               to={n.to}
               activeOptions={{ exact: true }}
-              activeProps={{ className: "text-foreground" }}
-              className="hover:text-foreground transition relative data-[status=active]:text-foreground data-[status=active]:after:content-[''] data-[status=active]:after:absolute data-[status=active]:after:-bottom-1 data-[status=active]:after:left-0 data-[status=active]:after:right-0 data-[status=active]:after:h-px data-[status=active]:after:bg-lime"
+              activeProps={{ className: "!text-foreground" }}
+              className="relative px-1 py-1 hover:text-foreground transition data-[status=active]:text-foreground data-[status=active]:after:content-[''] data-[status=active]:after:absolute data-[status=active]:after:-bottom-1.5 data-[status=active]:after:left-0 data-[status=active]:after:right-0 data-[status=active]:after:h-px data-[status=active]:after:bg-lime data-[status=active]:after:shadow-[0_0_10px_#c6f24a]"
             >
               {n.label}
             </Link>
@@ -44,7 +45,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="relative border-t border-white/5 mt-20">
-      <div className="mx-auto max-w-6xl px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="mx-auto max-w-7xl px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <OrbitLogo />
         <div className="flex items-center gap-4">
           <a href="https://www.linkedin.com/in/tanushchokshi/" target="_blank" rel="noreferrer"
@@ -69,6 +70,16 @@ export function AmbientBackground() {
       <div className="absolute inset-0" style={{ background: "var(--gradient-radial)" }} />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[900px] rounded-full blur-3xl opacity-30"
         style={{ background: "radial-gradient(circle, #c6f24a 0%, transparent 60%)" }} />
+    </div>
+  );
+}
+
+export function PageHeader({ eyebrow, title, subtitle }: { eyebrow: string; title: React.ReactNode; subtitle?: string }) {
+  return (
+    <div className="text-center max-w-3xl mx-auto reveal">
+      <div className="text-xs font-medium text-lime tracking-[0.25em] uppercase">{eyebrow}</div>
+      <h1 className="mt-5 text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">{title}</h1>
+      {subtitle && <p className="mt-6 text-muted-foreground text-lg leading-relaxed">{subtitle}</p>}
     </div>
   );
 }
