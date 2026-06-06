@@ -115,7 +115,7 @@
   .text-lime { color: var(--lime); }
   .bg-lime { background: var(--gradient-lime); }
   .glow-lime { box-shadow: var(--shadow-glow); }
-  .text-glow { text-shadow: 0 0 30px oklch(0.88 0.22 130 / 50%); }
+  .text-glow { text-shadow: 0 0 30px rgba(255,255,255,0.45); }
   .card-surface {
     background: linear-gradient(180deg, oklch(0.19 0.013 240 / 80%), oklch(0.15 0.01 240 / 80%));
     border: 1px solid oklch(1 0 0 / 6%);
