@@ -40,7 +40,7 @@ function Home() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-3 animate-fade-up" style={{ animationDelay: "240ms" }}>
-              <Link to="/waitlist" className="group inline-flex items-center gap-2 rounded-full bg-lime px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_40px_-5px_#c6f24a] hover:shadow-[0_0_60px_-5px_#c6f24a] transition-all">
+              <Link to="/waitlist" className="group inline-flex items-center gap-2 rounded-full bg-lime px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_40px_-5px_#ffffff] hover:shadow-[0_0_60px_-5px_#ffffff] transition-all">
                 Join the waitlist
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>

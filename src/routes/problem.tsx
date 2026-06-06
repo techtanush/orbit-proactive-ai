@@ -42,7 +42,7 @@ function Problem() {
         </div>
 
         <div className="mt-12 text-center reveal">
-          <Link to="/how-it-works" className="inline-flex items-center gap-2 rounded-full bg-lime px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_40px_-5px_#c6f24a] hover:shadow-[0_0_60px_-5px_#c6f24a] transition-all">
+          <Link to="/how-it-works" className="inline-flex items-center gap-2 rounded-full bg-lime px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_40px_-5px_#ffffff] hover:shadow-[0_0_60px_-5px_#ffffff] transition-all">
             See how Orbit works <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
