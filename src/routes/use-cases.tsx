@@ -48,7 +48,7 @@ function UseCases() {
                   key={c.text}
                   onClick={() => setActive(i)}
                   className={`w-full text-left card-surface rounded-2xl p-5 transition-all group ${
-                    isActive ? "border-lime/40 bg-lime/[0.03] shadow-[0_0_40px_-15px_#c6f24a]" : "hover:border-white/15"
+                    isActive ? "border-lime/40 bg-lime/[0.03] shadow-[0_0_40px_-15px_#ffffff]" : "hover:border-white/15"
                   }`}
                 >
                   <div className="flex items-start gap-4">

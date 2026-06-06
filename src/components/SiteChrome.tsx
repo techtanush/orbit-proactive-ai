@@ -25,7 +25,7 @@ export function SiteHeader() {
               to={n.to}
               activeOptions={{ exact: true }}
               activeProps={{ className: "!text-foreground" }}
-              className="relative px-1 py-1 hover:text-foreground transition data-[status=active]:text-foreground data-[status=active]:after:content-[''] data-[status=active]:after:absolute data-[status=active]:after:-bottom-1.5 data-[status=active]:after:left-0 data-[status=active]:after:right-0 data-[status=active]:after:h-px data-[status=active]:after:bg-lime data-[status=active]:after:shadow-[0_0_10px_#c6f24a]"
+              className="relative px-1 py-1 hover:text-foreground transition data-[status=active]:text-foreground data-[status=active]:after:content-[''] data-[status=active]:after:absolute data-[status=active]:after:-bottom-1.5 data-[status=active]:after:left-0 data-[status=active]:after:right-0 data-[status=active]:after:h-px data-[status=active]:after:bg-lime data-[status=active]:after:shadow-[0_0_10px_#ffffff]"
             >
               {n.label}
             </Link>
@@ -33,7 +33,7 @@ export function SiteHeader() {
         </nav>
         <Link
           to="/waitlist"
-          className="text-sm font-medium px-4 py-2 rounded-full bg-lime text-primary-foreground hover:opacity-90 transition shadow-[0_0_30px_-5px_#c6f24a]"
+          className="text-sm font-medium px-4 py-2 rounded-full bg-lime text-primary-foreground hover:opacity-90 transition shadow-[0_0_30px_-5px_#ffffff]"
         >
           Join waitlist
         </Link>
@@ -69,7 +69,7 @@ export function AmbientBackground() {
       <div className="absolute inset-0 grid-bg opacity-40" />
       <div className="absolute inset-0" style={{ background: "var(--gradient-radial)" }} />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[900px] rounded-full blur-3xl opacity-30"
-        style={{ background: "radial-gradient(circle, #c6f24a 0%, transparent 60%)" }} />
+        style={{ background: "radial-gradient(circle, #ffffff 0%, transparent 60%)" }} />
     </div>
   );
 }

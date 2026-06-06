@@ -39,7 +39,7 @@ function Founder() {
           <div className="md:col-span-2 reveal">
             <div className="relative mx-auto max-w-xs">
               <div className="absolute -inset-4 rounded-3xl bg-lime/20 blur-2xl opacity-50 animate-glow-pulse" />
-              <div className="relative aspect-square rounded-3xl overflow-hidden border border-lime/30 shadow-[0_0_60px_-15px_#c6f24a]">
+              <div className="relative aspect-square rounded-3xl overflow-hidden border border-lime/30 shadow-[0_0_60px_-15px_#ffffff]">
                 <img
                   src={tanushPhoto.url}
                   alt="Tanush Chokshi, founder of Orbit AI"
@@ -50,7 +50,7 @@ function Founder() {
                 {/* Subtle lime overlay for cohesion */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
               </div>
-              <div className="absolute -bottom-3 -right-3 rounded-full bg-lime px-3 py-1 text-xs font-semibold text-primary-foreground shadow-[0_0_30px_#c6f24a]">
+              <div className="absolute -bottom-3 -right-3 rounded-full bg-lime px-3 py-1 text-xs font-semibold text-primary-foreground shadow-[0_0_30px_#ffffff]">
                 Founder
               </div>
             </div>
@@ -70,7 +70,7 @@ function Founder() {
               <a
                 href="https://www.linkedin.com/in/tanushchokshi/"
                 target="_blank" rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-lime px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_-5px_#c6f24a] hover:shadow-[0_0_50px_-5px_#c6f24a] transition-all"
+                className="inline-flex items-center gap-2 rounded-full bg-lime px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_-5px_#ffffff] hover:shadow-[0_0_50px_-5px_#ffffff] transition-all"
               >
                 <Linkedin className="h-4 w-4" />
                 Connect on LinkedIn

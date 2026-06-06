@@ -8,11 +8,11 @@ export function OrbitPin() {
       {/* Outer glow */}
       <div
         className="absolute inset-0 rounded-full blur-3xl opacity-70 animate-glow-pulse"
-        style={{ background: "radial-gradient(circle, #c6f24a 0%, transparent 60%)" }}
+        style={{ background: "radial-gradient(circle, #ffffff 0%, transparent 60%)" }}
       />
       <div
         className="absolute inset-12 rounded-full blur-2xl opacity-50"
-        style={{ background: "radial-gradient(circle, #c6f24a 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, #ffffff 0%, transparent 70%)" }}
       />
 
       {/* Star particles */}
@@ -35,20 +35,20 @@ export function OrbitPin() {
       <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full animate-float">
         <defs>
           <radialGradient id="heroPlanet" cx="38%" cy="32%" r="65%">
-            <stop offset="0%" stopColor="#eaff8c" />
-            <stop offset="55%" stopColor="#c6f24a" />
-            <stop offset="100%" stopColor="#6fa516" />
+            <stop offset="0%" stopColor="#ffffff" />
+            <stop offset="55%" stopColor="#ffffff" />
+            <stop offset="100%" stopColor="#d4d4d4" />
           </radialGradient>
           <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#c6f24a" stopOpacity="0.4" />
-            <stop offset="50%" stopColor="#eaff8c" stopOpacity="1" />
-            <stop offset="100%" stopColor="#c6f24a" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
+            <stop offset="50%" stopColor="#ffffff" stopOpacity="1" />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0.4" />
           </linearGradient>
         </defs>
 
         {/* Outer rotating dashed orbit */}
         <g transform="translate(100 105) rotate(-22)" className="origin-center animate-orbit-spin">
-          <ellipse cx="0" cy="0" rx="92" ry="22" fill="none" stroke="#c6f24a" strokeOpacity="0.25" strokeWidth="1" strokeDasharray="3 6" />
+          <ellipse cx="0" cy="0" rx="92" ry="22" fill="none" stroke="#ffffff" strokeOpacity="0.25" strokeWidth="1" strokeDasharray="3 6" />
         </g>
 
         {/* Back half ring */}
@@ -58,7 +58,7 @@ export function OrbitPin() {
 
         {/* Planet */}
         <circle cx="100" cy="92" r="42" fill="url(#heroPlanet)" />
-        <circle cx="100" cy="92" r="42" fill="#c6f24a" opacity="0.15" />
+        <circle cx="100" cy="92" r="42" fill="#ffffff" opacity="0.15" />
         {/* Highlight */}
         <ellipse cx="86" cy="78" rx="14" ry="9" fill="#ffffff" opacity="0.35" />
 

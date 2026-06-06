@@ -11,9 +11,9 @@ export function OrbitMark({
   animated?: boolean;
   tone?: "lime" | "white" | "dark";
 }) {
-  const planet = tone === "dark" ? "#0a0f0a" : tone === "white" ? "#ffffff" : "#c6f24a";
-  const ring = tone === "dark" ? "#0a0f0a" : tone === "white" ? "#ffffff" : "#c6f24a";
-  const glow = "#c6f24a";
+  const planet = tone === "dark" ? "#0a0f0a" : tone === "white" ? "#ffffff" : "#ffffff";
+  const ring = tone === "dark" ? "#0a0f0a" : tone === "white" ? "#ffffff" : "#ffffff";
+  const glow = "#ffffff";
 
   return (
     <svg
@@ -22,13 +22,13 @@ export function OrbitMark({
       viewBox="0 0 64 64"
       fill="none"
       aria-label="Orbit AI"
-      className={animated ? "drop-shadow-[0_0_12px_#c6f24a80]" : ""}
+      className={animated ? "drop-shadow-[0_0_12px_#ffffff80]" : ""}
     >
       <defs>
         <radialGradient id="planetGrad" cx="38%" cy="32%" r="65%">
-          <stop offset="0%" stopColor={tone === "lime" ? "#eaff8c" : planet} />
+          <stop offset="0%" stopColor={tone === "lime" ? "#ffffff" : planet} />
           <stop offset="55%" stopColor={planet} />
-          <stop offset="100%" stopColor={tone === "lime" ? "#6fa516" : planet} />
+          <stop offset="100%" stopColor={tone === "lime" ? "#d4d4d4" : planet} />
         </radialGradient>
       </defs>
 

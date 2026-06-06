@@ -57,7 +57,7 @@ function Waitlist() {
               className="mt-2 w-full rounded-xl bg-input border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-lime/50 focus:ring-2 focus:ring-lime/20 transition" />
           </div>
           <button type="submit"
-            className="w-full mt-2 rounded-xl bg-lime px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_0_40px_-5px_#c6f24a] hover:shadow-[0_0_70px_-5px_#c6f24a] transition-all">
+            className="w-full mt-2 rounded-xl bg-lime px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_0_40px_-5px_#ffffff] hover:shadow-[0_0_70px_-5px_#ffffff] transition-all">
             Join waitlist
           </button>
         </form>

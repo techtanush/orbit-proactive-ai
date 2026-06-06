@@ -40,7 +40,7 @@ function HowItWorks() {
             {steps.map((s, i) => (
               <div key={s.title} className="reveal card-surface rounded-2xl p-8 relative" style={{ transitionDelay: `${i * 120}ms` }}>
                 <div className="flex items-center justify-between">
-                  <div className="h-12 w-12 rounded-xl bg-lime/10 border border-lime/30 grid place-items-center text-lime shadow-[0_0_20px_-5px_#c6f24a]">
+                  <div className="h-12 w-12 rounded-xl bg-lime/10 border border-lime/30 grid place-items-center text-lime shadow-[0_0_20px_-5px_#ffffff]">
                     <s.icon className="h-5 w-5" />
                   </div>
                   <span className="text-xs text-muted-foreground tabular-nums">STEP 0{i + 1}</span>
@@ -53,7 +53,7 @@ function HowItWorks() {
         </div>
 
         <div className="mt-20 text-center reveal">
-          <Link to="/use-cases" className="inline-flex items-center gap-2 rounded-full bg-lime px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_40px_-5px_#c6f24a] hover:shadow-[0_0_60px_-5px_#c6f24a] transition-all">
+          <Link to="/use-cases" className="inline-flex items-center gap-2 rounded-full bg-lime px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_40px_-5px_#ffffff] hover:shadow-[0_0_60px_-5px_#ffffff] transition-all">
             See real use cases <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
