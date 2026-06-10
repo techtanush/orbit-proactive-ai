@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { OrbitMark } from "@/components/OrbitLogo";
 import { ParticleField } from "@/components/ParticleField";
 import tanushPhoto from "@/assets/tanush.png.asset.json";
 import {
   ArrowRight, Hand, Mic, Sparkles, CheckCircle2, Eye, Car, Calendar, MessageSquare,
-  Star, Laptop, Linkedin, Globe, Github, Smartphone, Zap, Radar, ArrowDown,
+  Star, Laptop, Linkedin, Globe, Github, Zap, Radar, ArrowDown,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
