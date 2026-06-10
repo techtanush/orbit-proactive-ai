@@ -9,44 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WaitlistRouteImport } from './routes/waitlist'
-import { Route as UseCasesRouteImport } from './routes/use-cases'
-import { Route as ProblemRouteImport } from './routes/problem'
-import { Route as HowItWorksRouteImport } from './routes/how-it-works'
-import { Route as FounderRouteImport } from './routes/founder'
-import { Route as ArchitectureRouteImport } from './routes/architecture'
 import { Route as IndexRouteImport } from './routes/index'
 
-const WaitlistRoute = WaitlistRouteImport.update({
-  id: '/waitlist',
-  path: '/waitlist',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const UseCasesRoute = UseCasesRouteImport.update({
-  id: '/use-cases',
-  path: '/use-cases',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProblemRoute = ProblemRouteImport.update({
-  id: '/problem',
-  path: '/problem',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HowItWorksRoute = HowItWorksRouteImport.update({
-  id: '/how-it-works',
-  path: '/how-it-works',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FounderRoute = FounderRouteImport.update({
-  id: '/founder',
-  path: '/founder',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ArchitectureRoute = ArchitectureRouteImport.update({
-  id: '/architecture',
-  path: '/architecture',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -55,116 +19,28 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/architecture': typeof ArchitectureRoute
-  '/founder': typeof FounderRoute
-  '/how-it-works': typeof HowItWorksRoute
-  '/problem': typeof ProblemRoute
-  '/use-cases': typeof UseCasesRoute
-  '/waitlist': typeof WaitlistRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/architecture': typeof ArchitectureRoute
-  '/founder': typeof FounderRoute
-  '/how-it-works': typeof HowItWorksRoute
-  '/problem': typeof ProblemRoute
-  '/use-cases': typeof UseCasesRoute
-  '/waitlist': typeof WaitlistRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/architecture': typeof ArchitectureRoute
-  '/founder': typeof FounderRoute
-  '/how-it-works': typeof HowItWorksRoute
-  '/problem': typeof ProblemRoute
-  '/use-cases': typeof UseCasesRoute
-  '/waitlist': typeof WaitlistRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/architecture'
-    | '/founder'
-    | '/how-it-works'
-    | '/problem'
-    | '/use-cases'
-    | '/waitlist'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/architecture'
-    | '/founder'
-    | '/how-it-works'
-    | '/problem'
-    | '/use-cases'
-    | '/waitlist'
-  id:
-    | '__root__'
-    | '/'
-    | '/architecture'
-    | '/founder'
-    | '/how-it-works'
-    | '/problem'
-    | '/use-cases'
-    | '/waitlist'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ArchitectureRoute: typeof ArchitectureRoute
-  FounderRoute: typeof FounderRoute
-  HowItWorksRoute: typeof HowItWorksRoute
-  ProblemRoute: typeof ProblemRoute
-  UseCasesRoute: typeof UseCasesRoute
-  WaitlistRoute: typeof WaitlistRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/waitlist': {
-      id: '/waitlist'
-      path: '/waitlist'
-      fullPath: '/waitlist'
-      preLoaderRoute: typeof WaitlistRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/use-cases': {
-      id: '/use-cases'
-      path: '/use-cases'
-      fullPath: '/use-cases'
-      preLoaderRoute: typeof UseCasesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/problem': {
-      id: '/problem'
-      path: '/problem'
-      fullPath: '/problem'
-      preLoaderRoute: typeof ProblemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/how-it-works': {
-      id: '/how-it-works'
-      path: '/how-it-works'
-      fullPath: '/how-it-works'
-      preLoaderRoute: typeof HowItWorksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/founder': {
-      id: '/founder'
-      path: '/founder'
-      fullPath: '/founder'
-      preLoaderRoute: typeof FounderRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/architecture': {
-      id: '/architecture'
-      path: '/architecture'
-      fullPath: '/architecture'
-      preLoaderRoute: typeof ArchitectureRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -177,12 +53,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ArchitectureRoute: ArchitectureRoute,
-  FounderRoute: FounderRoute,
-  HowItWorksRoute: HowItWorksRoute,
-  ProblemRoute: ProblemRoute,
-  UseCasesRoute: UseCasesRoute,
-  WaitlistRoute: WaitlistRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
