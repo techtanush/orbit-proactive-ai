@@ -574,7 +574,7 @@ function Waitlist() {
         <div className="reveal mt-10 rounded-3xl p-1 bg-gradient-to-br from-lime/60 via-lime/20 to-transparent shadow-[0_0_80px_-20px_rgba(163,230,53,0.6)]">
           <div className="rounded-[22px] overflow-hidden bg-background">
             <iframe
-              src="https://forms.gle/ZC8CZNEgHDUgj1rV9"
+              src="https://tally.so/r/BzelM7"
               title="Orbit AI Waitlist"
               width="100%"
               height="900"
